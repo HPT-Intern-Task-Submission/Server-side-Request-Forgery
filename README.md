@@ -20,7 +20,7 @@ Host: checkroom.com
 As usual, we cannot get access to internal service of the website, or get access to restricted area. However, the internal server will handle request coming from internal networks differently, which will often has no authentication checks because request from internals are believed to be safe. We can take advantage of this feature to discover the internal networks as well as read sensitive file of the server. For example, there's a server runs locally, we can try the change the value of `url` to `/check-availability?url=localhost/etc/passwd`. The server then make another request to localhost
 ```
 GET /etc/passwd HTTP/2
-Host: example.com
+Host: localhost
 ```
 Because this request comes from trusted origin, then it will return the content of passwd file, then this file content will be displayed to us.
 
